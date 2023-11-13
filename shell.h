@@ -14,5 +14,13 @@
 
 void print_prompt();
 char **_getline(char *line);
+char *_strcat(char *tmp, char *src);
+char *_strcpy(char *tmp, char *src);
+void exe_cmd(char *patth, char **argv);
+char *_getline(char *line);
+char *get_path(char *command);
+int _strlen(char *src);
+char *_strdup(char *tmp, char *src);
+char **_strtok(char *line_buffer);
 
 #endif

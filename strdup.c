@@ -10,13 +10,8 @@ char *_strdup(char *tmp, char *src)
 {
 int size = 0;
 
-while (*src != '\0')
-{
-    size++;
-}
-
+size = _strlen(src);
 tmp = malloc(sizeof(char) * (size + 1));
-
 if (tmp == NULL)
 {
     perror("tsh: memory allocation error");
