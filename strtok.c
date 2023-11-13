@@ -33,7 +33,7 @@ char **_strtok(char *line_buffer)
     {
         str_token[i] = malloc(sizeof(char) * _strlen(token));
         str_token[i] = token;
-        token = (NULL, delim);
+        token = strtok(NULL, delim);
     }
     str_token[i] = '\0';
     return (str_token);
