@@ -13,6 +13,7 @@ char *get_path(char *command)
     struct stat buff;
 
     delim = ":";
+    path_var_cpy = NULL;
     path_var = getenv("PATH");
     if (path_var)
     {
@@ -26,7 +27,7 @@ char *get_path(char *command)
             if (path_of_cmd == NULL)
             {
                 perror("tsh: memory allocation error");
-                return (-1);
+                return (NULL);
             }
             _strcpy(path_of_cmd, path_token);
             _strcat(path_of_cmd, "/");

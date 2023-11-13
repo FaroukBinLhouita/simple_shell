@@ -15,14 +15,14 @@ int main(void)
         print_prompt();
         buffer = _getline(buffer);
         arg = _strtok(buffer);
-        if (strcmp(arg[0] == "exit") == 0)
+        if (strcmp(arg[0], "exit") == 0)
         {
             exit(0);
         }
         path = get_path(arg[0]);
         if (path == NULL)
         {
-            Fprintf(2, "Farouk&&Badawii: %s: command not found", arg[0]);
+            perror("Farouk&&Badawii: %s: command not found", arg[0]);
             return (-1);
         }
         exe_cmd(path, arg);

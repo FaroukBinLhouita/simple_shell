@@ -2,7 +2,6 @@
 
 /**
  * _strtok - split the user input
- *
  * @line_buffer: the user input
  *
  */
@@ -18,14 +17,14 @@ char **_strtok(char *line_buffer)
     while (token)
     {
         num_token++;
-        token = (NULL, delim);
+        token = strtok(NULL, delim);
     }
 
     str_token = malloc(sizeof(char *) * num_token);
     if (str_token == NULL)
     {
         perror("tsh: memory allocation error");
-        return (-1)
+        return (NULL);
     }
 
     token = strtok(line_buffer, delim);

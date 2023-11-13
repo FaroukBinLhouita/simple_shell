@@ -15,7 +15,7 @@ tmp = malloc(sizeof(char) * (size + 1));
 if (tmp == NULL)
 {
     perror("tsh: memory allocation error");
-    return (-1);
+    return (NULL);
 }
 
 while (*src != '\0')
