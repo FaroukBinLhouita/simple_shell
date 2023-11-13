@@ -22,7 +22,7 @@ int main(void)
         path = get_path(arg[0]);
         if (path == NULL)
         {
-            perror("Farouk&&Badawii: %s: command not found", arg[0]);
+            perror("Farouk&&Badawii: command not found");
             return (-1);
         }
         exe_cmd(path, arg);

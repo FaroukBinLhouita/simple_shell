@@ -10,6 +10,7 @@ char **_strtok(char *line_buffer)
     char *cpy, *token, *delim, **str_token;
     int num_token, i;
 
+    cpy = NULL;
     delim = " \n\t";
     num_token = 0;
     cpy = _strdup(cpy, line_buffer);
