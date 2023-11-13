@@ -13,16 +13,16 @@ int main(void)
     while (1)
     {
         print_prompt();
-        _getline(buffer);
+        buffer = _getline(buffer);
         arg = _strtok(buffer);
-        if (arg[0] == "exit" || arg[0] == EOF)
+        if (strcmp(arg[0] == "exit") == 0)
         {
             exit(0);
         }
         path = get_path(arg[0]);
         if (path == NULL)
         {
-            Fprintf("Farouk&&Badawii: %s: command not found", arg[0]);
+            Fprintf(2, "Farouk&&Badawii: %s: command not found", arg[0]);
             return (-1);
         }
         exe_cmd(path, arg);

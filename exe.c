@@ -7,9 +7,9 @@
  *
  * Return: void
  */
-void exe_cmd(char *patth, char **argv)
+int exe_cmd(char *patth, char **argv)
 {
-    pit_t child;
+    pid_t child;
 
     child = fork();
     if (child == -1)
@@ -26,4 +26,5 @@ void exe_cmd(char *patth, char **argv)
     {
         wait(NULL);
     }
+    return (1);
 }
