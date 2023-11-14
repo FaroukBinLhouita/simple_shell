@@ -10,6 +10,7 @@
 int exe_cmd(char *patth, char **argv)
 {
     pid_t child;
+    int status, exit_code;
 
     child = fork();
     if (child == -1)
@@ -24,7 +25,22 @@ int exe_cmd(char *patth, char **argv)
     }
     else
     {
-        wait(NULL);
+        wait(status);
+	if (WIFEXITED(STATUS))
+
     }
+    else
+    {
+	    wait(&status);
+	    if (WIFEXITED(status))
+	    {
+		    exit_code = WEXITSTATUS(status);
+	    }
+	    else if (WIFSIGNALED(status))
+		    exit_code = WTERMSIG(status);
+	    else (WIFSTOPPED(STATUS))
+		    exit_code = WSTOPSIG(status);
+    } 
+
     return (1);
 }
