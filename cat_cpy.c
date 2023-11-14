@@ -8,6 +8,7 @@
  */
 char *_strcpy(char *tmp, char *src)
 {
+char *new_dest = tmp;
 while (*src != '\0')
 {
     *tmp = *src;
@@ -15,7 +16,7 @@ while (*src != '\0')
     src++;
 }
 *tmp = '\0';
-return (tmp);
+return (new_dest);
 }
 
 /**
@@ -26,16 +27,19 @@ return (tmp);
  */
 char *_strcat(char *tmp, char *src)
 {
-    int i, count;
+    char *result;
 
-    i = 0;
-    count = _strlen(tmp);
-    while (*tmp)
+    result = tmp;
+
+    while (*tmp != '\0')
+	    tmp++;
+    while (*src != '\0')
     {
-        tmp[count] = src[i];
-        count++;
-        i++;
-    }    
-    tmp[count] = '\0';
-    return (tmp);
+	   *tmp = *src;
+	   tmp++;
+	   src++;
+    }
+    *tmp = '\0';
+    
+    return (result);
 }

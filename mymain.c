@@ -21,11 +21,11 @@ int main(void)
         }
         path = get_path(arg[0]);
         if (path == NULL)
-        {
             perror("Farouk&&Badawii: command not found");
-            return (-1);
-        }
-        exe_cmd(path, arg);
+
+       	exe_cmd(path, arg);
+
+	free(buffer);
     }
     return (0);
 }

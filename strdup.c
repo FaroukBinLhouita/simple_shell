@@ -8,7 +8,7 @@
  */
 char *_strdup(char *tmp, char *src)
 {
-int size = 0;
+size_t size, i;
 
 size = _strlen(src);
 tmp = malloc(sizeof(char) * (size + 1));
@@ -18,12 +18,8 @@ if (tmp == NULL)
     return (NULL);
 }
 
-while (*src != '\0')
-{
-    *tmp = *src;
-    tmp++;
-    src++;
-}
-*tmp = '\0';
+for(i = 0; i <= size; i++)
+tmp[i] = src[i];
+
 return (tmp);
 }
