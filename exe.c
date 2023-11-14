@@ -33,12 +33,10 @@ int exe_cmd(char *patth, char **argv)
     {
 	    wait(&status);
 	    if (WIFEXITED(status))
-	    {
 		    exit_code = WEXITSTATUS(status);
-	    }
 	    else if (WIFSIGNALED(status))
 		    exit_code = WTERMSIG(status);
-	    else (WIFSTOPPED(STATUS))
+	    else if (WIFSTOPPED(STATUS))
 		    exit_code = WSTOPSIG(status);
     } 
 
