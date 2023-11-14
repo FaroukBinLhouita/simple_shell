@@ -25,20 +25,20 @@ int exe_cmd(char *patth, char **argv)
     }
     else
     {
-        wait(status);
-	if (WIFEXITED(STATUS))
-
-    }
-    else
-    {
 	    wait(&status);
 	    if (WIFEXITED(status))
+	    {
 		    exit_code = WEXITSTATUS(status);
+	    }
 	    else if (WIFSIGNALED(status))
-		    exit_code = WTERMSIG(status);
-	    else if (WIFSTOPPED(STATUS))
+	    {
+		    exit_code = WTERMSIG(status);	   
+	    }
+	    else if (WIFSTOPPED(status))
+	    {
 		    exit_code = WSTOPSIG(status);
+	    }
     } 
 
-    return (1);
+    return (exit_code);
 }
