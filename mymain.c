@@ -14,12 +14,20 @@ int main(void)
     {
         print_prompt();
         buffer = _getline(buffer);
-        arg = _strtok(buffer);
-        if (arg != NULL && strcmp(arg[0], "exit") == 0)
+        if (buffer == NULL)
         {
+            printf("\n");
+            break;
+        }
+        if (buffer[0] == '\n)
+            continue;
+        arg = _strtok(buffer);
+        buffer[_stlen(buffer) - 1] = '\0';
+        if (strcmp(buffer, "exit") == 0) {
+            printf("Exiting shell....\n");
             free(buffer);
             free(arg);
-            break;
+            exit(0);
         }
         path = get_path(arg[0]);
         if (path == NULL)
