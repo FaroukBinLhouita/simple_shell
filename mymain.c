@@ -19,7 +19,7 @@ int main(void)
         {
             free(buffer);
             free(arg);
-            exit(EXIT_SUCCESS);
+            break;
         }
         path = get_path(arg[0]);
         if (path == NULL)
