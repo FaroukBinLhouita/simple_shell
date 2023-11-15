@@ -6,7 +6,7 @@
 
 int main(void)
 {
-    char *buffer, arg, *path;
+    char *buffer, **arg, *path;
 
     buffer = NULL;
     while (1)
@@ -24,7 +24,6 @@ int main(void)
         buffer[_strlen(buffer) - 1] = '\0';
         if (strcmp(buffer, "exit") == 0) {
             printf("Exiting shell....\n");
-            free(buffer);
             exit(0);
         }
         path = get_path(arg[0]);
