@@ -15,9 +15,11 @@ int main(void)
         print_prompt();
         buffer = _getline(buffer);
         arg = _strtok(buffer);
-        if (strcmp(arg[0], "exit") == 0)
+        if (arg != NULL && strcmp(arg[0], "exit") == 0)
         {
-            exit(EXIT_SUCCESS);
+            free(buffer);
+            free(arg);
+            break;
         }
         path = get_path(arg[0]);
         if (path == NULL)
