@@ -9,6 +9,7 @@ int main(void)
     while (1)
     {
         char *buffer, **arg, *path;
+	int exit_code;
 
         buffer = NULL;
         print_prompt();
@@ -27,9 +28,16 @@ int main(void)
         }
         path = get_path(arg[0]);
         if (path == NULL)
+	{
             perror("Farouk&&Badawii: command not found");
+	    free(buffer);
+	    continue;
+	}
 
-        exe_cmd(path, arg);
+        exit_code = exe_cmd(path, arg);
+	if (exit_code == -1)
+		perror("Error: command execution");
+
         free(buffer);
     }
     return (0);

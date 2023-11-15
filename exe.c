@@ -15,13 +15,17 @@ int exe_cmd(char *patth, char **argv)
     child = fork();
     if (child == -1)
     {
-        perror("Erorr");
+        perror("Erorr: forking");
         return (-1);
     }
     
     if (child == 0)
     {
-        execve(patth, argv, NULL);
+        if (execve(patth, argv, NULL) == -1)
+	{
+		perror("Error: exeve() error");
+		exit (EXIT_FAILURE);
+	}
     }
     else
     {
