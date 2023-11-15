@@ -6,11 +6,11 @@
 
 int main(void)
 {
-    char *buffer, **arg, *path;
-
-    buffer = NULL;
     while (1)
     {
+        char *buffer, **arg, *path;
+
+        buffer = NULL;
         print_prompt();
         buffer = _getline(buffer);
         if (buffer == NULL)
@@ -21,10 +21,9 @@ int main(void)
         if (buffer[0] == '\n')
             continue;
         arg = _strtok(buffer);
-        buffer[_strlen(buffer) - 1] = '\0';
         if (strcmp(buffer, "exit") == 0) {
             printf("Exiting shell....\n");
-            exit(0);
+            exit(EXIT_SUCCESS);
         }
         path = get_path(arg[0]);
         if (path == NULL)
