@@ -10,12 +10,11 @@ char *_getline(char *line)
 {
 size_t num_chars = 0;
 
+{
 if (getline(&line, &num_chars, stdin) == -1)
 {
 perror("Erorr: Reading input");
-free(line);
-exit(EXIT_FAILURE);
+exit(-1);}
 }
-
 return (line);
 }
