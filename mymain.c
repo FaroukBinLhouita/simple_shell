@@ -7,8 +7,8 @@
  */
 int main(void)
 {
-   char *buffer = NULL, **arg, *path;
-
+    char *buffer = NULL, **arg, *path;
+    int i;
     while (1)
     {
         print_prompt();
@@ -29,7 +29,6 @@ int main(void)
         {
             free(arg[i]);
         }
-         free(arg);
     }
     return (0);
 }
