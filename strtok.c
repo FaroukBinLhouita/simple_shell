@@ -30,16 +30,16 @@ char **_strtok(char *line_buffer)
     for (i = 0; token != NULL; i++)
     {
         str_token[i] = malloc(sizeof(char) * _strlen(token + 1));
-	if (str_token[i] == NULL)
-	{
-		perror("tsh: memory allocation error");
-		 for (j = 0; j < i; j++)
-        	{
-            		free(str_token[j]);
-        	}
-		free (str_token);
-		return (NULL);
-	}
+        if (str_token[i] == NULL)
+        {
+                perror("tsh: memory allocation error");
+                 for (j = 0; j < i; j++)
+                {
+                        free(str_token[j]);
+                }
+                free (str_token);
+                return (NULL);
+        }
         _strcpy(str_token[i], token);
         token = strtok(NULL, delim);
     }

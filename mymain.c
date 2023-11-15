@@ -1,30 +1,38 @@
 #include "shell.h"
-
 /**
- * main - simple shell program
- *
+ * main - main function
  * Return: always 0
  */
+
 int main(void)
 {
-    char *buffer, **arg, *path;
+    char *buffer, arg, *path;
 
     buffer = NULL;
     while (1)
     {
         print_prompt();
         buffer = _getline(buffer);
-        arg = _strtok(buffer);
-        if (strcmp(arg[0], "exit") == 0)
+        if (buffer == NULL)
         {
-            exit(EXIT_SUCCESS);
+            printf("\n");
+            break;
+        }
+        if (buffer[0] == '\n)
+            continue;
+        arg = _strtok(buffer);
+        buffer[_stlen(buffer) - 1] = '\0';
+        if (strcmp(buffer, "exit") == 0) {
+            printf("Exiting shell....\n");
+            free(buffer);
+            exit(0);
         }
         path = get_path(arg[0]);
         if (path == NULL)
             perror("Farouk&&Badawii: command not found");
 
-       	exe_cmd(path, arg);
-	free(buffer);
+        exe_cmd(path, arg);
+        free(buffer);
     }
     return (0);
 }

@@ -32,12 +32,12 @@ char *_strcat(char *tmp, char *src)
     result = tmp;
 
     while (*tmp != '\0')
-	    tmp++;
+            tmp++;
     while (*src != '\0')
     {
-	   *tmp = *src;
-	   tmp++;
-	   src++;
+           *tmp = *src;
+           tmp++;
+           src++;
     }
     *tmp = '\0';
     
