@@ -22,12 +22,9 @@ int main(void)
         if (buffer[0] == '\n')
             continue;
         arg = _strtok(buffer);
-        buffer[_strlen(buffer) - 1] = '\0';
         if (strcmp(buffer, "exit") == 0) {
             printf("Exiting shell....\n");
-            free(buffer);
-            free(arg);
-            exit(0);
+            exit(EXIT_SUCCESS);
         }
         path = get_path(arg[0]);
         if (path == NULL)
