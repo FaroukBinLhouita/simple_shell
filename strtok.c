@@ -11,7 +11,7 @@ char **_strtok(char *line_buffer)
     int num_token, i, j;
 
     cpy = NULL;
-    delim = " \n\t";
+    delim = " \n";
     num_token = 0;
     cpy = _strdup(cpy, line_buffer);
     token = strtok(cpy, delim);
@@ -24,7 +24,8 @@ char **_strtok(char *line_buffer)
     if (str_token == NULL)
     {
         perror("tsh: memory allocation error");
-        return (NULL);
+        free(line_buffer);
+        exit(EXIT_FAILURE);
     }
     token = strtok(line_buffer, delim);
     for (i = 0; token != NULL; i++)
@@ -45,6 +46,5 @@ char **_strtok(char *line_buffer)
     }
     str_token[i] = NULL;
     free(cpy);
-
     return (str_token);
 }

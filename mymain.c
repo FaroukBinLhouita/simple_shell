@@ -7,9 +7,8 @@
  */
 int main(void)
 {
-    char *buffer, **arg, *path;
+   char *buffer = NULL, **arg, *path;
 
-    buffer = NULL;
     while (1)
     {
         print_prompt();
@@ -17,7 +16,7 @@ int main(void)
         arg = _strtok(buffer);
         if (strcmp(arg[0], "exit") == 0)
         {
-            exit(0);
+            exit(EXIT_SUCCESS);
         }
         path = get_path(arg[0]);
         if (path == NULL)
@@ -25,7 +24,12 @@ int main(void)
 
        	exe_cmd(path, arg);
 
-	free(buffer);
+	    free(buffer);
+        for (i = 0; arg[i] != NULL; i++)
+        {
+            free(arg[i]);
+        }
+         free(arg);
     }
     return (0);
 }
