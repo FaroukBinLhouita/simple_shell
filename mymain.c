@@ -22,8 +22,10 @@ int main(void)
         if (buffer[0] == '\n')
             continue;
         arg = _strtok(buffer);
-        if (strcmp(buffer, "exit") == 0) {
+        printf("Command: %s\n", arg[0]);
+	if (strcmp(arg[0], "exit") == 0) {
             printf("Exiting shell....\n");
+	    free(buffer);
             exit(EXIT_SUCCESS);
         }
         path = get_path(arg[0]);
@@ -34,9 +36,12 @@ int main(void)
 	    continue;
 	}
 
+	printf("Executing: %s\n", path);
         exit_code = exe_cmd(path, arg);
 	if (exit_code == -1)
 		perror("Error: command execution");
+	else
+		printf("Command exited with status: %d\n", exit_code);
 
         free(buffer);
     }

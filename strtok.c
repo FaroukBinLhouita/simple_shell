@@ -41,6 +41,7 @@ char **_strtok(char *line_buffer)
                 return (NULL);
         }
         _strcpy(str_token[i], token);
+	printf("Token[%d]: %s\n", i, str_token[i]);
         token = strtok(NULL, delim);
     }
     str_token[i] = NULL;

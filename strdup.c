@@ -6,20 +6,25 @@
  * @src: char pointer
  * Return: oringinal_dest
  */
-char *_strdup(char *tmp, char *src)
-{
-size_t size, i;
+char *strdup(const char *src) {
+	size_t len;
+	char *dest;
 
-size = _strlen(src);
-tmp = malloc(sizeof(char) * (size + 1));
-if (tmp == NULL)
-{
-    perror("tsh: memory allocation error");
-    return (NULL);
-}
+	len = _strlen(src);
+	dest = malloc(len + 1);
 
-for(i = 0; i <= size; i++)
-tmp[i] = src[i];
+	if (dest == NULL)
+	{
+		perror("Error: strdub memmory allocation failed");
+		return (NULL);
+	}
+	while (*src != '\0')
+	{
+		*dest = *src;
+		src++;
+		dest++;
+	}
+	*dest = '\0';
 
-return (tmp);
+	return (dest);
 }
