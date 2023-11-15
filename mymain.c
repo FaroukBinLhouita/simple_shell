@@ -22,7 +22,7 @@ int main(void)
         if (buffer[0] == '\n')
             continue;
         arg = _strtok(buffer);
-        buffer[_stlen(buffer) - 1] = '\0';
+        buffer[_strlen(buffer) - 1] = '\0';
         if (strcmp(buffer, "exit") == 0) {
             printf("Exiting shell....\n");
             free(buffer);
