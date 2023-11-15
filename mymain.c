@@ -19,7 +19,7 @@ int main(void)
             printf("\n");
             break;
         }
-        if (buffer[0] == '\n)
+        if (buffer[0] == '\n')
             continue;
         arg = _strtok(buffer);
         buffer[_stlen(buffer) - 1] = '\0';
