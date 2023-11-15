@@ -17,7 +17,7 @@ char *get_path(char *command)
     path_var = getenv("PATH");
     if (path_var)
     {
-        _strdup(path_var_cpy, path_var);
+       path_var_cpy = _strdup(path_var);
         cmd_len = _strlen(command);
         path_token = strtok(path_var, delim);
         for (i = 0; path_token != NULL; i++)
