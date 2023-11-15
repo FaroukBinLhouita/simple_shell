@@ -7,7 +7,9 @@
  */
 void print_prompt()
 {
-printf("Farouk&&Badawii$ ");
+    char *str = "Farouk&&Badawii$ ";
+    int len = _strlen(str);
+    write(1, str, len);
 }
 
 /**
