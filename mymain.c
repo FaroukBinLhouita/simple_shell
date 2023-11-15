@@ -7,11 +7,11 @@
  */
 int main(void)
 {
-    char *buffer, **arg, *path;
-
-    buffer = NULL;
     while (1)
     {
+        char *buffer, **arg, *path;
+
+        buffer = NULL;
         print_prompt();
         buffer = _getline(buffer);
         if (buffer == NULL)
