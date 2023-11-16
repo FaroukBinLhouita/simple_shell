@@ -5,7 +5,6 @@
  */
 void exe_env(char *env)
 {
-extern char **environ;
 int i = 0;
 while (environ[i])
 {
