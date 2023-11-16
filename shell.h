@@ -12,6 +12,8 @@
 #include <fcntl.h>
 #include <errno.h>
 
+extern char **environ;
+
 void print_prompt();
 char *_strcat(char *tmp, char *src);
 char *_strcpy(char *tmp, char *src);
