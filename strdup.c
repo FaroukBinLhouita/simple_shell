@@ -2,7 +2,6 @@
 
 /**
  * _strdup - make a copy
- * @dest: char pointer
  * @src: char pointer
  * Return: oringinal_dest
  */
