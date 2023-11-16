@@ -7,7 +7,7 @@
  */
 void freeup(char *buf1, char *buf2, char **buf3)
 {
-	free(buf1);
-	free(buf2);
-	free(buf3);
+free(buf1);
+free(buf2);
+free(buf3);
 }
