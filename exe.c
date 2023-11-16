@@ -22,10 +22,10 @@ int exe_cmd(char *patth, char **argv)
     if (child == 0)
     {
         if (execve(patth, argv, NULL) == -1)
-	{
-		perror("Error: exeve() error");
-		exit (EXIT_FAILURE);
-	}
+        {
+                perror("Error: exeve() error");
+                exit (EXIT_FAILURE);
+        }
     }
     else
     {
