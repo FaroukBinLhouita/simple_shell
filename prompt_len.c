@@ -5,7 +5,7 @@
  *
  * Return: always void
  */
-void print_prompt()
+void print_prompt(void)
 {
 char *str = "Farouk&&Badawii$ ";
 int len = _strlen(str);
