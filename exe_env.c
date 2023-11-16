@@ -1,5 +1,7 @@
 #include "shell.h"
 /**
+ * exe_env - env handler
+ * @env: char pointer
  */
 void exe_env(char *env)
 {

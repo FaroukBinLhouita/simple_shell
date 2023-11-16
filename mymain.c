@@ -7,6 +7,7 @@
 int main(void)
 {
 	char *buffer, **arg, *path;
+	buffer = NULL;
     while (1)
     {
         print_prompt();

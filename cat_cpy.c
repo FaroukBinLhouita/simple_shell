@@ -8,15 +8,16 @@
  */
 char *_strcpy(char *tmp, char *src)
 {
-char *new_dest = tmp;
-while (*src != '\0')
-{
-    *tmp = *src;
-    tmp++;
-    src++;
-}
-*tmp = '\0';
-return (new_dest);
+	char *new_dest = tmp;
+	while (*src != '\0')
+	{
+		*tmp = *src;
+		tmp++;
+		src++;
+	}
+	*tmp = '\0';
+
+	return (new_dest);
 }
 
 /**
@@ -27,19 +28,19 @@ return (new_dest);
  */
 char *_strcat(char *tmp, char *src)
 {
-    char *result;
+	char *result;
 
-    result = tmp;
+	result = tmp;
 
-    while (*tmp != '\0')
-            tmp++;
-    while (*src != '\0')
-    {
-           *tmp = *src;
-           tmp++;
-           src++;
-    }
-    *tmp = '\0';
+	while (*tmp != '\0')
+		tmp++;
+	while (*src != '\0')
+	{
+		*tmp = *src;
+		tmp++;
+		src++;
+	}
+	*tmp = '\0';
     
-    return (result);
+	return (result);
 }
