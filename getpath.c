@@ -1,10 +1,14 @@
 #include "shell.h"
+
+/**
+ * get_path - make a copy
+ * @command: char pointer
+ */
 char *get_path(char *command)
 {
 char *path_of_cmd, *path_token, *delim, *path_var, *path_var_cpy;
 int cmd_len, i, token_len;
 struct stat buff;
-
 delim = ":";
 path_var = getenv("PATH");
 if (path_var)
