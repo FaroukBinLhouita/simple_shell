@@ -3,7 +3,7 @@
 /**
  * get_path - make a copy
  * @command: char pointer
- *
+ * Return: always 0
  */
 char *get_path(char *command)
 {
