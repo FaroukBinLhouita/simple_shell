@@ -4,7 +4,7 @@
  * @i: int input;
  * @token: char double_pointer
  */
-void free_token(int i, char **token)
+void free_token(int i, char **token, char *token_cpy)
 {
 	int j;
 
@@ -14,6 +14,7 @@ void free_token(int i, char **token)
 		free(token[j]);
 	}
 
+	free(token_cpy);
 	free(token);
 }
 

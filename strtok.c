@@ -34,7 +34,7 @@ char **_strtok(char *line_buffer)
         str_token[i] = malloc(sizeof(char) * _strlen(token + 1));
         if (str_token[i] == NULL)
         {
-		free_token(i, str_token);
+		free_token(i, str_token, cpy);
                 return (NULL);
         }
         strcpy(str_token[i], token);
