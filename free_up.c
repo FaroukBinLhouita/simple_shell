@@ -1,4 +1,5 @@
 #include "shell.h"
+
 /**
  * freeup: free memmory function
  * @buf1: char pointer input
