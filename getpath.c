@@ -3,6 +3,7 @@
 /**
  * get_path - make a copy
  * @command: char pointer
+ *
  */
 char *get_path(char *command)
 {
