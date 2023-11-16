@@ -21,7 +21,6 @@ int exe_cmd(char *patth, char **argv)
     
     if (child == 0)
     {
-	printf("Executing command: %s\n", patth);
         if (execve(patth, argv, NULL) == -1)
 	{
 		perror("Error: exeve() error");
@@ -44,6 +43,5 @@ int exe_cmd(char *patth, char **argv)
             exit_code = WSTOPSIG(status);
         }
     } 
-
     return (exit_code);
 }

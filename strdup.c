@@ -6,7 +6,8 @@
  * @src: char pointer
  * Return: oringinal_dest
  */
-char *strdup(const char *src) {
+char *_strdup(char *src)
+{
 	size_t len;
 	char *dest;
 

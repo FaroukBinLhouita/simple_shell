@@ -13,7 +13,7 @@ char **_strtok(char *line_buffer)
     cpy = NULL;
     delim = " \n\t";
     num_token = 0;
-    cpy = _strdup(cpy, line_buffer);
+    cpy = strdup(line_buffer);
     token = strtok(cpy, delim);
     while (token)
     {
@@ -40,8 +40,7 @@ char **_strtok(char *line_buffer)
                 free (str_token);
                 return (NULL);
         }
-        _strcpy(str_token[i], token);
-	printf("Token[%d]: %s\n", i, str_token[i]);
+        strcpy(str_token[i], token);
         token = strtok(NULL, delim);
     }
     str_token[i] = NULL;

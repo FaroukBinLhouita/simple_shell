@@ -19,7 +19,7 @@ int exe_cmd(char *patth, char **argv);
 char *_getline(char *line);
 char *get_path(char *command);
 int _strlen(char *src);
-char *_strdup(char *tmp, char *src);
+char *_strdup(char *src);
 char **_strtok(char *line_buffer);
 
 #endif
