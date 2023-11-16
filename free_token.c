@@ -6,15 +6,14 @@
  */
 void free_token(int i, char **token, char *token_cpy)
 {
-	int j;
+int j;
 
-	perror("Error: memory allocation  failuer due _strtok");
-	for (j = 0; j < i; j++)
-	{
-		free(token[j]);
-	}
-
-	free(token_cpy);
-	free(token);
+perror("Error: memory allocation  failuer due _strtok");
+for (j = 0; j < i; j++)
+{
+free(token[j]);
 }
 
+free(token_cpy);
+free(token);
+}
