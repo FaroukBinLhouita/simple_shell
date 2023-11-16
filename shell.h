@@ -21,5 +21,6 @@ char *get_path(char *command);
 int _strlen(char *src);
 char *_strdup(char *src);
 char **_strtok(char *line_buffer);
-
+void exe_env(char *env);
+void freeup(char *buf1, char *buf2, char **buf3);
 #endif

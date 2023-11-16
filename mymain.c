@@ -6,9 +6,7 @@
 
 int main(void)
 {
-	char *buffer, **arg, *path, *env;
-	extern char **environ;
-	int i = 0;
+	char *buffer, **arg, *path;
     while (1)
     {
         print_prompt();
@@ -26,23 +24,18 @@ int main(void)
         }
 	if (strcmp(arg[0], "env") == 0)
 	{
-		while(environ[i])
-		{
-			env = environ[i];
-			printf("%s\n", env);
-			i++;
-		}
+		exe_env(arg[0]);
 		continue;
 	}
         path = get_path(arg[0]);
         if (path == NULL)
 	{
             perror("Farouk&&Badawii: command not found");
-	    free(buffer);
+	    freeup(buffer, path, arg);
 	    continue;
 	}
         exe_cmd(path, arg);
-        free(buffer);
+        freeup(buffer, path, arg);
     }
     return (0);
 }
