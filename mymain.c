@@ -6,43 +6,42 @@
 
 int main(void)
 {
+        char *buffer, **arg, *path, *env;
+        extern char **environ;
+        int i = 0;
     while (1)
     {
-        char *buffer, **arg, *path;
-	int exit_code;
-
-        buffer = NULL;
         print_prompt();
         buffer = _getline(buffer);
-        if (buffer == NULL)
-        {
-            printf("\n");
-            break;
-        }
+
         if (buffer[0] == '\n')
             continue;
+
         arg = _strtok(buffer);
-        printf("Command: %s\n", arg[0]);
-	if (strcmp(arg[0], "exit") == 0) {
+        if (strcmp(arg[0], "exit") == 0)
+        {
             printf("Exiting shell....\n");
-	    free(buffer);
+            free(buffer);
             exit(EXIT_SUCCESS);
+        }
+        if (strcmp(arg[0], "env") == 0)
+        {
+                while(environ[i])
+                {
+                        env = environ[i];
+                        printf("%s\n", env);
+                        i++;
+                }
+                continue;
         }
         path = get_path(arg[0]);
         if (path == NULL)
-	{
+        {
             perror("Farouk&&Badawii: command not found");
-	    free(buffer);
-	    continue;
-	}
-
-	printf("Executing: %s\n", path);
-        exit_code = exe_cmd(path, arg);
-	if (exit_code == -1)
-		perror("Error: command execution");
-	else
-		printf("Command exited with status: %d\n", exit_code);
-
+            free(buffer);
+            continue;
+        }
+        exe_cmd(path, arg);
         free(buffer);
     }
     return (0);
