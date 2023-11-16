@@ -7,25 +7,25 @@
  */
 void print_prompt()
 {
-    char *str = "Farouk&&Badawii$ ";
-    int len = _strlen(str);
-    write(1, str, len);
+char *str = "Farouk&&Badawii$ ";
+int len = _strlen(str);
+write(1, str, len);
 }
 
 /**
- * _strlen - counting
- * @src: the input
- *
- * Return: the count
- */
+* _strlen - counting
+* @src: the input
+*
+* Return: the count
+*/
 int _strlen(char *src)
 {
 int count = 0;
 
 while (*src != '\0')
 {
-    count++;
-    src++;
+count++;
+src++;
 }
 return (count);
 }
