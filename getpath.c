@@ -7,11 +7,7 @@ char *get_path(char *command)
 
     delim = ":";
     path_var = getenv("PATH");
-<<<<<<< HEAD
 	
-=======
-
->>>>>>> 2d8653899b0d6069707441ffbc361ce74ee3de3c
     if (path_var)
     {
         path_var_cpy = strdup(path_var);
@@ -24,11 +20,7 @@ char *get_path(char *command)
                 if (path_of_cmd == NULL)
                 {
                     perror("tsh: memory allocation error");
-<<<<<<< HEAD
 		    free(path_var_cpy);
-=======
-                    free(path_var_cpy);
->>>>>>> 2d8653899b0d6069707441ffbc361ce74ee3de3c
                     return (NULL);
                 }
                 strcpy(path_of_cmd, path_token);
@@ -44,21 +36,12 @@ char *get_path(char *command)
                     free(path_of_cmd);
                     path_token = strtok(NULL, delim);
                 }
-<<<<<<< HEAD
 	    }
 	    free(path_var_cpy);
 	    if (stat(command, &buff) == 0)
 		return (command);
 
 	    return (NULL);
-=======
-            }
-            free(path_var_cpy);
-            if (stat(command, &buff) == 0)
-                return (command);
-
-            return (NULL);
->>>>>>> 2d8653899b0d6069707441ffbc361ce74ee3de3c
     }
     return NULL;
 }
