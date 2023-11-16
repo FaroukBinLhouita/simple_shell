@@ -6,20 +6,11 @@
 
 int main(void)
 {
-<<<<<<< HEAD
-	char *buffer, **arg, *path;
-	buffer = NULL;
-    while (1)
-    {
-        print_prompt();
-        buffer = _getline(buffer);
-=======
 char *buffer, **arg, *path;
 while (1)
 {
 print_prompt();
 buffer = _getline(buffer);
->>>>>>> 7da9d2b06222aa0c5c4f8ec33fe728db1a24603e
 
 if (buffer[0] == '\n')
 continue;
