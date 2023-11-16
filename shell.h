@@ -23,4 +23,6 @@ char *_strdup(char *src);
 char **_strtok(char *line_buffer);
 void exe_env(char *env);
 void freeup(char *buf1, char *buf2, char **buf3);
+void free_token(int i, char **token);
+
 #endif

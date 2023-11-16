@@ -8,13 +8,14 @@
 char **_strtok(char *line_buffer)
 {
     char *cpy, *token, *delim, **str_token;
-    int num_token, i, j;
+    int num_token, i;
 
     cpy = NULL;
     delim = " \n\t";
     num_token = 0;
     cpy = strdup(line_buffer);
     token = strtok(cpy, delim);
+
     while (token)
     {
         num_token++;
@@ -24,6 +25,7 @@ char **_strtok(char *line_buffer)
     if (str_token == NULL)
     {
         perror("tsh: memory allocation error");
+	free(cpy);
         return (NULL);
     }
     token = strtok(line_buffer, delim);
@@ -32,12 +34,7 @@ char **_strtok(char *line_buffer)
         str_token[i] = malloc(sizeof(char) * _strlen(token + 1));
         if (str_token[i] == NULL)
         {
-                perror("tsh: memory allocation error");
-                 for (j = 0; j < i; j++)
-                {
-                        free(str_token[j]);
-                }
-                free (str_token);
+		free_token(i, str_token);
                 return (NULL);
         }
         strcpy(str_token[i], token);
