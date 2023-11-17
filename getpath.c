@@ -1,16 +1,9 @@
 #include "shell.h"
-<<<<<<< HEAD
-/**
- * get_path - get path of command
- * @command: command;
- * Return: the whole path
-=======
 
 /**
  * get_path - make a copy
  * @command: char pointer
  * Return: always 0
->>>>>>> b48d6a49d0404194ceda0e728cd0403208637ea1
  */
 char *get_path(char *command)
 {
