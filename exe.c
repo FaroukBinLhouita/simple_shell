@@ -24,7 +24,7 @@ if (child == 0)
 if (execve(patth, argv, NULL) == -1)
 {
 perror("Error: exeve() error");
-exit (EXIT_FAILURE);
+exit(EXIT_FAILURE);
 }
 }
 else
@@ -42,6 +42,6 @@ else if (WIFSTOPPED(status))
 {
 exit_code = WSTOPSIG(status);
 }
-} 
+}
 return (exit_code);
 }

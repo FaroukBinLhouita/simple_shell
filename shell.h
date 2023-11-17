@@ -12,7 +12,9 @@
 #include <fcntl.h>
 #include <errno.h>
 
-void print_prompt();
+extern char **environ;
+
+void print_prompt(void);
 char *_strcat(char *tmp, char *src);
 char *_strcpy(char *tmp, char *src);
 int exe_cmd(char *patth, char **argv);

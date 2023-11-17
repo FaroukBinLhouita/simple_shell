@@ -1,13 +1,16 @@
 #include "shell.h"
+/**
+ * get_path - get path of command
+ * @command: command;
+ * Return: the whole path
+ */
 char *get_path(char *command)
 {
 char *path_of_cmd, *path_token, *delim, *path_var, *path_var_cpy;
 int cmd_len, i, token_len;
 struct stat buff;
-
 delim = ":";
 path_var = getenv("PATH");
-
 if (path_var)
 {
 path_var_cpy = strdup(path_var);
@@ -40,8 +43,7 @@ path_token = strtok(NULL, delim);
 free(path_var_cpy);
 if (stat(command, &buff) == 0)
 return (command);
-
 return (NULL);
 }
-return NULL;
+return (NULL);
 }
