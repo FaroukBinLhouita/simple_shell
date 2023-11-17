@@ -14,11 +14,7 @@
 
 extern char **environ;
 
-<<<<<<< HEAD
 void print_prompt(void);
-=======
-void print_prompt();
->>>>>>> b48d6a49d0404194ceda0e728cd0403208637ea1
 char *_strcat(char *tmp, char *src);
 char *_strcpy(char *tmp, char *src);
 int exe_cmd(char *patth, char **argv);
