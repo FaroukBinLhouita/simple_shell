@@ -12,10 +12,10 @@
 char *_ourstrtok(const char *str, char deli)
 {
         int count = strlen(str), i, j = 0;
-        char *new = malloc((count + 1) * sizeof(char)); // Allocate memory for new array
+        char *new = malloc((count + 1) * sizeof(char));
 
         if (new == NULL) {
-            return NULL; // Memory allocation failed
+            return NULL;
         }
 
         for (i = 0; i <= count; i++)
